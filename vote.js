@@ -5,6 +5,7 @@ const puppeteer = require('puppeteer');
     try {
 
         const browser = await puppeteer.launch({
+            executablePath: '/usr/bin/google-chrome',
             headless: "new",
             args: [
                 '--no-sandbox',

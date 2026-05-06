@@ -90,7 +90,13 @@ const puppeteer = require('puppeteer');
                     block: 'center'
                 });
 
-                voteButton.click();
+                voteButton.dispatchEvent(
+                    new MouseEvent('click', {
+                        bubbles: true,
+                        cancelable: true,
+                        view: window
+                    })
+                );
 
                 return true;
             }
